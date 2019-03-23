@@ -413,10 +413,12 @@ Status OnLanePlanning::Plan(
 
     if (FLAGS_enable_record_debug) {
       ptr_debug->MergeFrom(frame_->open_space_info().debug_instance());
+      // call: frame_->op->tra ->ptr_debug
       ADEBUG << "Open space debug information added!";
       // call open space info load debug
       // to-do: runxin, create a new flag to enable openspace chart
-      ExportOpenSpaceChart(frame_->open_space_info().debug_instance(),
+      // to-do, export ptr_debug instead
+      ExportOpenSpaceChart(trajectory_pb->debug(), // frame_->open_space_info().debug_instance(),
                            ptr_debug);
     }
   } else {

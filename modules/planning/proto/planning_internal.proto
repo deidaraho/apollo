@@ -142,6 +142,8 @@ message OpenSpaceDebug {
   repeated apollo.planning_internal.ObstacleDebug obstacles = 9;
   optional apollo.common.TrajectoryPoint roi_shift_point = 10;
   optional apollo.common.TrajectoryPoint end_point = 11;
+  optional apollo.planning_internal.Trajectories patitioned_trajectories = 12;
+  optional apollo.planning_internal.Trajectories sticth_trajectories = 13;
 }
 
 message SmootherDebug {

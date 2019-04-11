@@ -59,12 +59,12 @@ Status OpenSpaceFallbackDecider::Process(Frame* frame) {
     auto previous_point = ptr_fallback_trajectory_pair->first[current_idx];
     double relative_collision_distance =
         collision_point.path_point().s() - previous_point.path_point().s();
-    double stopping_distance = relative_collision_distance;
     // the accelerate = -v0^2 / (2*s), where s is slowing down distance
     size_t temp_horizon =
         frame_->open_space_info().fallback_trajectory().first.NumOfPoints();
     const double accelerate =
-        -previous_point.v() * previous_point.v() / (2.0 * stopping_distance);
+        - previous_point.v() * previous_point.v() /
+        (2.0 * (relative_collision_distance + 1e-6));
     double relative_stopping_time = -previous_point.v() / accelerate;
     for (size_t i = current_idx; i < temp_horizon; ++i) {
       double temp_relative_time =

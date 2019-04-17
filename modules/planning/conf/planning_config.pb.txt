@@ -285,7 +285,7 @@ default_task_config: {
     interpolated_pieces_num: 10
     initial_gear_check_horizon: 15
     heading_search_range: 0.79
-    heading_track_range: 1.57
+    heading_track_range: 3.14
     vehicle_box_iou_threshold: 0.9
     distance_search_range: 2.0
     distance_to_midpoint: 0.1

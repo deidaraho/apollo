@@ -150,7 +150,7 @@ default_task_config: {
             ipopt_recalc_y: "yes"
           }
           qp_format: OSQP
-          min_safety_distance: 0.01
+          min_safety_distance: 0.0
           osqp_config {
             alpha: 1.0
             eps_abs: 1.0e-3
